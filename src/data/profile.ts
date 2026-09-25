@@ -94,7 +94,7 @@ export const education = [
   },
   {
     period: 'Sep 2019–Jun 2023',
-    degree: 'Undergraduate studies in Computer Science',
+    degree: 'Bachelor of Engineering',
     school: 'Tsinghua University',
     department: 'Department of Computer Science and Technology',
     detail: 'GPA: 3.78 / 4.00',
@@ -190,10 +190,10 @@ export const service = [
 export const interests = [
   {
     title: 'Choral singing',
-    role: 'A tenor (T2) in the first ensemble of',
+    role: 'A tenor (T2) in the first ensemble of the Advanced Choir of',
     organization: {
       name: 'the Student Art Troupe of Tsinghua University',
-      url: 'https://space.bilibili.com/523118342',
+      url: 'https://www.arts.tsinghua.edu.cn/en/info/1131/1613.htm',
     },
     description: 'Performed at the New Year concert and university anniversary celebrations, as well as in “Beloved Homeland,” “Cantabile,” and other concerts.',
   },

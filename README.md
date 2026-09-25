@@ -29,6 +29,7 @@ npm run dev
 
 ```text
 .
+├── .github/workflows/deploy.yml # GitHub Pages 构建与部署
 ├── public/
 │   ├── favicon.svg             # YW 字母标志
 │   └── profile.jpg             # 首屏个人照片
@@ -73,10 +74,10 @@ url: '', // 空字符串：禁用 Webpage；填入真实网页地址：可点击
 合唱条目的 `role`、`organization` 和 `description` 组成同一段叙述，演出说明保留在 `description`。合唱队名称作为行内下划线链接；`organization.url` 为空时显示不可点击的占位文字。当前配置为：
 
 ```ts
-role: 'A tenor (T2) in the first ensemble of',
+role: 'A tenor (T2) in the first ensemble of the Advanced Choir of',
 organization: {
   name: 'the Student Art Troupe of Tsinghua University',
-  url: 'https://space.bilibili.com/523118342',
+  url: 'https://www.arts.tsinghua.edu.cn/en/info/1131/1613.htm',
 },
 ```
 
@@ -91,6 +92,12 @@ npm run build
 npm run preview
 ```
 
-构建成功后，将 `dist/` 目录的内容上传到静态网站托管服务。当前没有自动部署工作流或服务端 adapter；`npm run preview` 仅用于本地检查构建结果，不是生产部署命令。页脚年份在构建时生成，跨年后需重新构建。
+`npm run preview` 仅用于本地检查构建结果。网站为静态构建，不使用服务端 adapter；构建输出位于 `dist/`。
 
-当前配置适用于网站根路径。正式域名可在 `astro.config.mjs` 设置为 `site`；部署到 `/my-portfolio/` 等子路径时，需要设置 `base`。favicon 和个人照片路径已使用 `import.meta.env.BASE_URL`，新增静态资源时需同样适配部署前缀。
+部署目标为 [weiyz23.github.io](https://weiyz23.github.io/)。`astro.config.mjs` 中的 `site` 设置为 `https://weiyz23.github.io`，使用根路径，不设置仓库名作为 `base` 前缀。favicon 和个人照片路径使用 `import.meta.env.BASE_URL`。
+
+GitHub Pages 使用 `.github/workflows/deploy.yml` 部署：推送到 `main` 或手动触发 `workflow_dispatch` 后，工作流在 Node.js 24 环境依次执行 `npm ci`、`npm run build`，并将 `dist/` 发布到 GitHub Pages。
+
+首次启用时，在仓库 [Settings → Pages](https://github.com/weiyz23/weiyz23.github.io/settings/pages) 的 **Build and deployment → Source** 中选择 **GitHub Actions**。之后推送到 `main` 即会自动部署；可在 [Actions 工作流页面](https://github.com/weiyz23/weiyz23.github.io/actions/workflows/deploy.yml) 查看结果，或通过 **Run workflow** 手动运行。
+
+页脚年份在构建时生成，跨年后可手动运行工作流重新构建并发布。
