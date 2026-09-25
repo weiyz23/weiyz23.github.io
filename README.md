@@ -21,5 +21,3 @@ I sing tenor (T2) in the first ensemble of the Advanced Choir of [the Student Ar
 ## Contact
 
 [weiyz23@mails.tsinghua.edu.cn](mailto:weiyz23@mails.tsinghua.edu.cn) · [rixtonwei@gmail.com](mailto:rixtonwei@gmail.com)
-
-For website setup, content editing, and deployment, see the [usage and maintenance guide](about/how_to_use.md).
