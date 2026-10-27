@@ -3,7 +3,8 @@ export const profile = {
   name: 'Yunze Wei',
   chineseName: '卫蕴泽',
   preferredName: 'Rixton',
-  role: 'Ph.D. student',
+  role: 'Ph.D. candidate',
+  roleTitle: 'Ph.D. Candidate',
   university: 'Tsinghua University',
   institute: 'Institute for Network Sciences and Cyberspace',
   advisor: {
@@ -85,19 +86,19 @@ export const technicalSkills = [
 export const education = [
   {
     period: 'Aug 2023–Present',
-    degree: 'Ph.D. student',
+    degree: profile.roleTitle,
     school: 'Tsinghua University',
     department: 'Institute for Network Sciences and Cyberspace',
     advisor: profile.advisor,
     researchMentor: profile.researchMentor,
-    detail: 'Coursework GPA: 4.00 / 4.00',
+    detail: 'GPA: 4.00 / 4.00',
   },
   {
     period: 'Sep 2019–Jun 2023',
     degree: 'Bachelor of Engineering',
     school: 'Tsinghua University',
     department: 'Department of Computer Science and Technology',
-    detail: 'GPA: 3.78 / 4.00',
+    detail: 'GPA: 3.76 / 4.00',
   },
 ];
 

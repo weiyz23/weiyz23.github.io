@@ -29,10 +29,10 @@ const navigation = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Yunze Wei (Rixton), Ph.D. student at Tsinghua University. Education, research in network security and graph computing, publications, student leadership, and music." />
+    <meta name="description" content={`${profile.name} (${profile.preferredName}), ${profile.role} at ${profile.university}. Education, research in network security and graph computing, publications, student leadership, and music.`} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
-    <title>Yunze Wei (Rixton) | Tsinghua University</title>
+    <title>{`${profile.name} (${profile.preferredName}) | ${profile.roleTitle} | ${profile.university}`}</title>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -49,7 +49,7 @@ const navigation = [
       <section id="about" class="hero" aria-labelledby="name-heading">
         <div class="hero-heading">
           <h1 id="name-heading">{profile.name} <span class="name-alias">({profile.preferredName})</span><span class="chinese-name" lang="zh-CN">{profile.chineseName}</span></h1>
-          <p class="affiliation">{profile.role}, {profile.university} · {profile.location}</p>
+          <p class="affiliation">{profile.roleTitle}, {profile.university} · {profile.location}</p>
         </div>
         <img
           class="profile-photo"
